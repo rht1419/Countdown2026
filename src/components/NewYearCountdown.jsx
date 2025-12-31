@@ -11,8 +11,8 @@ const NewYearCountdown = ({ onEnterBook }) => {
     // Use useRef to track the interval ID so we can clear it on unmount
     const fireworksIntervalRef = useRef(null);
 
-    // Target Date: Jan 1, 2026 00:00:00
-    const [targetDate] = useState(() => new Date('January 1, 2026 00:00:00').getTime());
+    // Target Date: Jan 1, 2026 03:30:00 IST
+    const [targetDate] = useState(() => new Date('2026-01-01T03:30:00+05:30').getTime());
 
     function calculateTimeLeft() {
         try {
