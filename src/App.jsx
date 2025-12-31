@@ -5,21 +5,18 @@ import NewYearCountdown from './components/NewYearCountdown';
 import './styles/global.css';
 
 function App() {
-  const [hasEntered, setHasEntered] = useState(false); // Controls transition from Countdown to LockScreen
-  const [isUnlocked, setIsUnlocked] = useState(false); // Controls transition from LockScreen to Book
+  const [hasEntered, setHasEntered] = useState(false); // Controls transition from Countdown to Book
+  const [isUnlocked, setIsUnlocked] = useState(false); // Controls initial app access
 
-  // Flow: NewYearCountdown -> LockScreen -> Book
+  // Flow: LockScreen -> NewYearCountdown -> Book
   return (
     <div className="app-container">
-      {!hasEntered ? (
-        <NewYearCountdown onEnterBook={() => setHasEntered(true)} />
-      ) : !isUnlocked ? (
+      {!isUnlocked ? (
         <LockScreen onUnlock={() => setIsUnlocked(true)} />
+      ) : hasEntered ? (
+        <Book onGoHome={() => setHasEntered(false)} />
       ) : (
-        <Book onGoHome={() => {
-          setHasEntered(false);
-          setIsUnlocked(false);
-        }} />
+        <NewYearCountdown onEnterBook={() => setHasEntered(true)} />
       )}
     </div>
   );

@@ -132,27 +132,25 @@ const NewYearCountdown = ({ onEnterBook }) => {
             overflow: 'hidden',
             zIndex: 9999
         }}>
-            {/* Background Video (Visible only during countdown) */}
-            {!celebrating && (
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        zIndex: -1
-                    }}
-                >
-                    <source src={mainPageVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            )}
+            {/* Background Video (Always Visible) */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    zIndex: -1
+                }}
+            >
+                <source src={mainPageVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
 
             {/* Dark Overlay for Readability */}
             <div style={{
