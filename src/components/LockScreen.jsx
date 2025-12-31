@@ -52,7 +52,7 @@ const LockScreen = ({ onUnlock }) => {
                     textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
                     marginBottom: '2rem'
                 }}>
-                    My 2025<br />Scrapbook
+                    Our 2025<br />Scrapbook
                 </h1>
 
                 <form onSubmit={handleSubmit} style={{ width: '100%', textAlign: 'center' }}>
